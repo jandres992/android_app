@@ -14,6 +14,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
     val AdapterRazas : AdapterRazas = AdapterRazas()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     fun cargar_listas_razas(){
         val url = "https://dog.ceo/api/breeds/list/all"
-        val solicitud = JsonObjectRequest(
-            Request.Method.GET, url, null,
+        val solicitud = JsonObjectRequest(Request.Method.GET, url, null,
             {response->
                 try{
                     if (response.getString("status") == "success"){
@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             })
         val cola = Volley.newRequestQueue(this)
         cola.add(solicitud)
+
     }
 
 }

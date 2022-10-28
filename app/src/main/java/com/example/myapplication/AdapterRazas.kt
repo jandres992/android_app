@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -23,6 +24,11 @@ class AdapterRazas : RecyclerView.Adapter<AdapterRazas.MyViewHolder>() {
         holder.binding.textraza.text = item.razas
         holder.binding.nombrazas.setOnClickListener{
             Toast.makeText(context, "Raza ->"+ item.razas.toString(), Toast.LENGTH_SHORT).show()
+
+            val act = Intent(context.applicationContext, Activityimg :: class.java)
+            act.putExtra("raza", Razas[position].razas)
+            act.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.getApplicationContext().startActivity(act)
         }
     }
 

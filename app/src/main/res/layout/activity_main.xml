@@ -6,22 +6,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="12dp"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/labeltitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20dp"
-        android:layout_marginBottom="15dp"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="20dp" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listrazas"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
 </LinearLayout>
